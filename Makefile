@@ -16,6 +16,7 @@
 # Base path used to install.
 CMD_DESTDIR ?= /usr/local
 GO111MODULE_VALUE=auto
+GOPROXY_VALUE=https://goproxy.io,direct
 PREFIX ?= out/
 
 PKG=github.com/containerd/stargz-snapshotter
@@ -36,18 +37,18 @@ build: $(CMD)
 FORCE:
 
 containerd-stargz-grpc: FORCE
-	GO111MODULE=$(GO111MODULE_VALUE) go build -o $(PREFIX)$@ $(GO_BUILD_FLAGS) $(GO_LD_FLAGS) -v ./cmd/containerd-stargz-grpc
+	GO111MODULE=$(GO111MODULE_VALUE) GOPROXY=$(GOPROXY_VALUE) go build -o $(PREFIX)$@ $(GO_BUILD_FLAGS) $(GO_LD_FLAGS) -v ./cmd/containerd-stargz-grpc
 
 ctr-remote: FORCE
-	GO111MODULE=$(GO111MODULE_VALUE) go build -o $(PREFIX)$@ $(GO_BUILD_FLAGS) $(GO_LD_FLAGS) -v ./cmd/ctr-remote
+	GO111MODULE=$(GO111MODULE_VALUE) GOPROXY=$(GOPROXY_VALUE) go build -o $(PREFIX)$@ $(GO_BUILD_FLAGS) $(GO_LD_FLAGS) -v ./cmd/ctr-remote
 
 stargz-store: FORCE
-	GO111MODULE=$(GO111MODULE_VALUE) go build -o $(PREFIX)$@ $(GO_BUILD_FLAGS) $(GO_LD_FLAGS) -v ./cmd/stargz-store
+	GO111MODULE=$(GO111MODULE_VALUE) GOPROXY=$(GOPROXY_VALUE) go build -o $(PREFIX)$@ $(GO_BUILD_FLAGS) $(GO_LD_FLAGS) -v ./cmd/stargz-store
 
 check:
 	@echo "$@"
-	@GO111MODULE=$(GO111MODULE_VALUE) golangci-lint run
-	@cd ./estargz ; GO111MODULE=$(GO111MODULE_VALUE) golangci-lint run
+	@GO111MODULE=$(GO111MODULE_VALUE) GOPROXY=$(GOPROXY_VALUE) golangci-lint run
+	@cd ./estargz ; GO111MODULE=$(GO111MODULE_VALUE) GOPROXY=$(GOPROXY_VALUE) golangci-lint run
 
 install-check-tools:
 	@curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin v1.39.0

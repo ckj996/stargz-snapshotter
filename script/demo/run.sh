@@ -16,7 +16,7 @@
 
 set -euo pipefail
 
-REPO=$GOPATH/src/github.com/containerd/stargz-snapshotter
+REPO=/home/ckj/gitrepos/stargz-snapshotter
 CONTAINERD_CONFIG_DIR=/etc/containerd/
 CONTAINERD_ROOT=/var/lib/containerd/
 REMOTE_SNAPSHOTTER_CONFIG_DIR=/etc/containerd-stargz-grpc/

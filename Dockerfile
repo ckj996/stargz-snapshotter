@@ -208,7 +208,7 @@ ENTRYPOINT [ "/usr/local/bin/entrypoint", "/sbin/init" ]
 
 # Image for testing CRI-O with Stargz Store.
 # NOTE: This cannot be used for the node image of KinD.
-FROM ubuntu:22.04 AS crio-stargz-store
+FROM ubuntu:22.10 AS crio-stargz-store
 ARG CNI_PLUGINS_VERSION
 ARG CRIO_TEST_PAUSE_IMAGE_NAME
 ENV container docker

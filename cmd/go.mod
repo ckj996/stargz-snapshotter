@@ -3,8 +3,8 @@ module github.com/containerd/stargz-snapshotter/cmd
 go 1.16
 
 require (
-	github.com/containerd/containerd v1.6.4
-	github.com/containerd/go-cni v1.1.5
+	github.com/containerd/containerd v1.6.10
+	github.com/containerd/go-cni v1.1.6
 	github.com/containerd/stargz-snapshotter v0.11.4
 	github.com/containerd/stargz-snapshotter/estargz v0.11.4
 	github.com/containerd/stargz-snapshotter/ipfs v0.11.4
@@ -23,9 +23,9 @@ require (
 	github.com/urfave/cli v1.22.5
 	go.etcd.io/bbolt v1.3.6
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	golang.org/x/sys v0.0.0-20220405210540-1e041c57c461
-	google.golang.org/grpc v1.46.0
-	k8s.io/cri-api v0.25.0-alpha.0
+	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f
+	google.golang.org/grpc v1.47.0
+	k8s.io/cri-api v0.25.0
 )
 
 replace (

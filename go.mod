@@ -26,10 +26,10 @@ require (
 	github.com/rs/xid v1.4.0
 	github.com/sirupsen/logrus v1.9.0
 	golang.org/x/sync v0.1.0
-	golang.org/x/sys v0.2.0
+	golang.org/x/sys v0.5.0
 	google.golang.org/grpc v1.50.1
 	k8s.io/api v0.25.4
-	k8s.io/apimachinery v0.25.4
+	k8s.io/apimachinery v0.26.2
 	k8s.io/client-go v0.25.4
 	k8s.io/cri-api v0.27.0-alpha.0
 )
